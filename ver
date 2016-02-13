@@ -1,0 +1,74 @@
+
+<html>
+<head>
+	<title>traffic camera test</title>
+	<style>
+		.cam {
+		  display: inline-block;
+		  width: 260px;
+		  height: 177px;
+		  margin: 0 20px 20px 0;
+		  font-size: 14px;
+			}
+
+		.cam img {
+		  width: 520px;
+		}
+	</style>
+</head>
+<body>
+<div>
+  <!-- http://www.nyctmc.org/multiview2.php -->
+  <div class="cam">
+    <span>Atlantic Ave @ Boerum St</span>
+    <img  src="http://207.251.86.238/cctv424.jpg?rand=0.24847271060571074" />
+  </div>
+  <div class="cam">
+    <span>Atlantic Ave @ BQE</span>
+    <img  src="http://207.251.86.238/cctv425.jpg?rand=0.24172986345365644" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn Queens Expy @ Atlantic Ave</span>
+    <img  src="http://207.251.86.238/cctv524.jpg?rand=0.6130215683951974" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn Queens Expy @ Hamilton Ave</span>
+    <img  src="http://207.251.86.238/cctv517.jpg?rand=0.3075288189575076" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn Queens Expy @ Kent Ave</span>
+    <img  src="http://207.251.86.238/cctv532.jpg?rand=0.07699004956521094" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn Queens Expy @ Sackett St</span>
+    <img  src="http://207.251.86.238/cctv521.jpg?rand=0.2431982052512467" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn Queens Expy @ Union St</span>
+    <img  src="http://207.251.86.238/cctv519.jpg?rand=0.3458706720266491" />
+  </div>
+  <div class="cam">
+    <span>Brooklyn-Battery Tunnel @ Brooklyn Side</span>
+    <img  src="http://webcam.mta.info/btimg/172.28.208.8/2/image.jpg?rand=0.35015200613997877" />
+  </div>
+  <div class="cam">
+    <span>Gowanus Expy @ Prospect Interchange</span>
+    <img  src="http://207.251.86.238/cctv510.jpg?rand=0.1930018332786858" />
+  </div>
+   <div class="cam">
+    <span>Grand Army Plaza</span>
+    <img  src="http://207.251.86.238/cctv98.jpg?rand=0.7390622049570084" />
+  </div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+  setInterval(function() {
+    $('img').each(function(i, e) {
+      $img = $(e);
+      $img.attr('src',
+                $img.attr('src').replace(/rand=.*/, "rand=" + Math.random()));
+    });
+  }, 1000);
+</script>
+</body>
+</html>
